@@ -1,7 +1,6 @@
 .app {
-    overflow: hidden;
-    overflow-y: hidden;
-    /* padding: 20px 10px; */
+  overflow: hidden;
+  overflow-y: hidden;
   font-family: "Montserrat", sans-serif;
   font-family: "Poppins", sans-serif;
 }
