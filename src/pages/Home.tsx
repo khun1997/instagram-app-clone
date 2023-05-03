@@ -33,27 +33,9 @@ import {
   RightFooter,
   RightFootEnd,
 } from "./Home.style";
-// import { useState } from "react";
-// import { UserType } from "../hooks/useFetchApi";
 
-// interface IconProps {
-//   isActive: boolean;
-//   onClick: () => void;
-//   // fill:string
-
-// }
-// type Props = {
-//   data: UserType[];
-//   loading: boolean;
-//   error: null;
-// };
-
-const Home:React.FC = () => {
-  const { data, loading } = useApiHook();
-  // const [isActive, setIsActive] = useState(false);
-  // const handleClick = () => {
-  //   setIsActive(!isActive)
-  // };
+const Home: React.FC = () => {
+  const { data = [], loading } = useApiHook();
   return (
     <>
       {loading ? (
@@ -164,17 +146,16 @@ const Home:React.FC = () => {
             {/* mid section start */}
             <MidSection>
               <ActiveUser>
-                {data &&
-                  data.map((user) => {
-                    return (
-                      <>
-                        <User key={user.id}>
-                          <img src={user.image} />
-                          <p>{user.firstName}</p>
-                        </User>
-                      </>
-                    );
-                  })}
+                {data?.map((user) => {
+                  return (
+                    <>
+                      <User key={user.id}>
+                        <img src={user.image} />
+                        <p>{user.firstName}</p>
+                      </User>
+                    </>
+                  );
+                })}
               </ActiveUser>
               <Post>
                 <Card>
@@ -227,23 +208,22 @@ const Home:React.FC = () => {
                       <p>Suggested for you</p>
                       <button>See All</button>
                     </RightSuggestDiv>
-                    {data &&
-                      data.map((user) => {
-                        return (
-                          <>
-                            <SuggestedUsers>
-                              <SuggestedUser key={user.id}>
-                                <img src={user.image} />
-                                <div>
-                                  <p>{user.firstName}</p>
-                                  <span>suggested for you</span>
-                                </div>
-                                <button>Follow</button>
-                              </SuggestedUser>
-                            </SuggestedUsers>
-                          </>
-                        );
-                      })}
+                    {data?.map((user) => {
+                      return (
+                        <>
+                          <SuggestedUsers>
+                            <SuggestedUser key={user.id}>
+                              <img src={user.image} />
+                              <div>
+                                <p>{user.firstName}</p>
+                                <span>suggested for you</span>
+                              </div>
+                              <button>Follow</button>
+                            </SuggestedUser>
+                          </SuggestedUsers>
+                        </>
+                      );
+                    })}
                     {/* <RightProfileList>a</RightProfileList>
                     <RightProfileList>a</RightProfileList>
                     <RightProfileList>a</RightProfileList>

@@ -1,11 +1,10 @@
-// import { UserType } from "./useApiHook";
 import { useEffect, useState } from "react";
 
 export type UserType = {
   id: number;
   firstName: string;
   image: string;
-  users:string
+  users: string;
 };
 const useApiHook = () => {
   const [data, setData] = useState<UserType[] | null>([]);
@@ -27,6 +26,5 @@ const useApiHook = () => {
   }
   return { data, loading, error };
 };
-
 
 export default useApiHook;
