@@ -25,7 +25,6 @@ const useApiHook = () => {
   if (error) {
     setError(error);
   }
-  // console.log(data.users)
   return { data, loading, error };
 };
 

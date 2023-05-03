@@ -48,13 +48,12 @@ import {
 //   error: null;
 // };
 
-const Home = () => {
+const Home:React.FC = () => {
   const { data, loading } = useApiHook();
   // const [isActive, setIsActive] = useState(false);
   // const handleClick = () => {
   //   setIsActive(!isActive)
   // };
-  console.log(data);
   return (
     <>
       {loading ? (
