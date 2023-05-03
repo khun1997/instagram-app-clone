@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-export const Section = styled.section``;
 export const Wrapper = styled.section`
   display: flex;
   width: 100%;

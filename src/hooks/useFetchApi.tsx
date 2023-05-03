@@ -6,15 +6,17 @@ export type UserType = {
   image: string;
   users: string;
 };
+
 const useApiHook = () => {
+  const url = "https://dummyjson.com/users";
   const [data, setData] = useState<UserType[] | null>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<null>(null);
   useEffect(() => {
     fetchApi();
-  }, []);
+  }, [url]);
   const fetchApi = async (): Promise<any> => {
-    const response = await fetch("https://dummyjson.com/users");
+    const response = await fetch(url);
     const data = await response.json();
     setData(data.users);
   };
